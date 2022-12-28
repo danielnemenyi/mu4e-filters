@@ -2,7 +2,7 @@
 ;; Author: Daniel Nemenyi <daniel@pompo.co>
 ;; Keywords: mu4e
 ;; Version: 0.1
-;; URL: https://github.com/...
+;; URL: https://github.com/danielnemenyi/mu4e-filters
 ;; Package-Requires: ((emacs "28.1") (mu4e "1.6.10"))
 
 ;; This file is NOT part of GNU Emacs.

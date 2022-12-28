@@ -1,9 +1,10 @@
 
 # Mu4e Filters
 
-Mu4e Filters provides a set of easy and customizable search filter
-interface for the Emacs email client Mu4e. Simply press `,` (`M-x
-mu4e-filters`) and pick your filter.
+Mu4e Filters provides an easy and customizable search filter interface
+for the Emacs email client [Mu4e](https://github.com/djcb/mu).
+Install, press `,` (`M-x mu4e-filters`) on your message view and
+consider that hosepipe filtered.
 
 Mu4e Filters hopes to reduce the overhead of context switching that
 the many kinds of messages is a typical inbox impose on a user. A
@@ -13,10 +14,11 @@ inbox (`\`) dealing with those by the sender at point (`, s`), and so
 on.
 
 It also allows users to intuitively and easily perform complex and
-non-trivial narrowing and search queries. For example: *Filter the
-current email list by those from the sender at point with a
-'Word'-like attachment sent this month that I still haven't replied
-to* (`,l , s f , a w , d m , W`).
+non-trivial narrowing and search queries.
+
+For example: *Filter the current email list by those from the sender
+at point with a 'Word'-like attachment sent this month that I still
+haven't replied to* (`, l , s f , a w , d m , W`).
 
 Pressing `,` will make Mu4e Filters narrow the current header view by
 that filter. To perform a global search of all your messages instead,
@@ -27,34 +29,19 @@ others too!
 
 ## Filters
 
-|-----|------------|---------------------------------------------------------|
-| Key | Filter     | Info                                                    |
-|-----|------------|---------------------------------------------------------|
-| a   | Attachment | Filter by attachments or specific attachment MIME.      |
-|     |            | Customize via the variable `mu4e-filter-by-attachment`. |
-|-----|------------|---------------------------------------------------------|
-| d   | Date       | Filter by date range or relative date period.           |
-|-----|------------|---------------------------------------------------------|
-| g   | Flagged    | Filter by flagged ('starred') or unflagged messages.    |
-|-----|------------|---------------------------------------------------------|
-| h   | Forwarded  | Filter by forwarded ('Passed' or 'handled') messages.   |
-|-----|------------|---------------------------------------------------------|
-| i   | Size       | Filter by messages bigger than n                        |
-|-----|------------|---------------------------------------------------------|
-| l   | List       | Filter by email list at point                           |
-|-----|------------|---------------------------------------------------------|
-| p   | Priority   | Filter by message priority (as set by sender)           |
-|-----|------------|---------------------------------------------------------|
-| t   | Recipient  | Filter by the address in the :to field at point         |
-|-----|------------|---------------------------------------------------------|
-| w   | Replied    | Filter by replied or unreplied messages                 |
-|-----|------------|---------------------------------------------------------|
-| r   | Read       | Filter by read or unread messages                       |
-|-----|------------|---------------------------------------------------------|
-| s   | Sender     | Filter by sender at point                               |
-|-----|------------|---------------------------------------------------------|
-| x   | GPG        | Filter by encrypted or signed messages                  |
-|-----|------------|---------------------------------------------------------|
+| KEY | FILTER     | INFO                                                                                                       |
+| a   | Attachment | Filter by attachments or specific attachment MIME. Customize via the variable `mu4e-filter-by-attachment`. |
+| d   | Date       | Filter by date range or relative date period.                                                              |
+| g   | Flagged    | Filter by flagged ('starred') or unflagged messages.                                                       |
+| h   | Forwarded  | Filter by forwarded ('Passed' or 'handled') messages.                                                      |
+| i   | Size       | Filter by messages bigger than n                                                                           |
+| l   | List       | Filter by email list at point                                                                              |
+| p   | Priority   | Filter by message priority (as set by sender)                                                              |
+| t   | Recipient  | Filter by the address in the :to field at point                                                            |
+| w   | Replied    | Filter by replied or unreplied messages                                                                    |
+| r   | Read       | Filter by read or unread messages                                                                          |
+| s   | Sender     | Filter by sender at point                                                                                  |
+| x   | GPG        | Filter by encrypted or signed messages                                                                     |
 
 ## Installation
 
