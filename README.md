@@ -30,6 +30,7 @@ others too!
 ## Filters
 
 | KEY | FILTER     | INFO                                                                                                       |
+| --- |:----------:| ----------------------------------------------------------------------------------------------------------:|
 | a   | Attachment | Filter by attachments or specific attachment MIME. Customize via the variable `mu4e-filter-by-attachment`. |
 | d   | Date       | Filter by date range or relative date period.                                                              |
 | g   | Flagged    | Filter by flagged ('starred') or unflagged messages.                                                       |
