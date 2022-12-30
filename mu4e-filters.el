@@ -31,10 +31,10 @@
   :group 'mu4e)
 
 (add-hook 'mu4e-headers-mode-hook
-          (lambda () (local-set-key (kbd ",") 'mu4e-filter)))
+          (lambda () (local-set-key (kbd ",") 'mu4e-filters)))
 
 (add-hook 'mu4e-view-mode-hook
-          (lambda () (local-set-key (kbd ",") 'mu4e-filter)))
+          (lambda () (local-set-key (kbd ",") 'mu4e-filters)))
 
 (defun mu4e-filters ()
   "Offer various mu4e message view filters.
