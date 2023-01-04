@@ -16,9 +16,9 @@ on.
 It also allows users to intuitively and easily perform complex and
 non-trivial narrowing and search queries.
 
-For example: *Filter the current email list by those from the sender
-at point with a 'Word'-like attachment sent this month that I still
-haven't replied to* (`, l , s f , a w , d m , W`).
+For example: *Filter the current email list* (`, l`) *by those involving the sender
+at point* (`, s s`) *with a 'Word'-like attachment* (`, a w`) *sent this month* (`, d m`) 
+*that I still haven't replied to* (`, w W`).
 
 Pressing `,` will make Mu4e Filters narrow the current header view by
 that filter. To perform a global search of all your messages instead,
@@ -63,19 +63,6 @@ RET`). Th
 Else see the documentation for the variables `mu4e-filters-enabled`,
 `mu4e-filter-attachment-types`, `mu4e-filter-list-of-dates`,
 `mu4e-filter-implicit-email-lists`, `mu4e-filter-sizes`.
-
-Mu4e-filters strives to be comprehensive and may provide more filters
-than you care for. See the documentation for `mu4e-filters-enabled`
-for how to remove them. A common customization may be:
-
-``` emacs-lisp
-(dolist (filter '(mu4e-filter-by-priority
-		          mu4e-filter-by-encrypted
-             	  mu4e-filter-by-unencrypted
-		          mu4e-filter-by-signed
-		          mu4e-filter-by-unsigned))
-  (rassq-delete-all filter mu4e-filters-enabled))
-```
 
 ## Support
 
