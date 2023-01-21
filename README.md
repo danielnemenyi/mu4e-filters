@@ -1,6 +1,9 @@
 
 # Mu4e Filters
 
+**This is still in an experimental state. Functions and bindings may
+change in a future update.**
+
 Mu4e Filters provides an easy and customizable search filter interface
 for the Emacs email client [Mu4e](https://github.com/djcb/mu).
 Install, press `,` (`M-x mu4e-filters`) on your message view and
@@ -46,21 +49,21 @@ others too!
 
 ## Installation
 
-Until this package is up on MELPA and other package managers, clone
-this repo onto your computer and import it in your init.el with
-`load-file`. For example:
+Until I feel like this is stable enough to be submitted to MELPA,
+you'll need to clone this repo to your computer and import it in
+your `init.el` or `.emacs` with `load-file`. For example:
 
 ``` emacs-lisp
-(load-file (concat user-emacs-directory "lisp/mu4e-filters/mu4e-filters.el"))
+(load-file "path/to/mu4e-filters.el")
 ```
 
 ## Customization
 
 You can customize the behaviour of mu4e-filters via the mu4e-filters
 menu in the Customize menu (`M-x customize-group RET mu4e-filters
-RET`). Th
+RET`).
 
-Else see the documentation for the variables `mu4e-filters-enabled`,
+Otherwise see the documentation for the variables `mu4e-filters-enabled`,
 `mu4e-filter-attachment-types`, `mu4e-filter-list-of-dates`,
 `mu4e-filter-implicit-email-lists`, `mu4e-filter-sizes`.
 
