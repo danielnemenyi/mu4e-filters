@@ -59,17 +59,17 @@ messages, else narrow current message list. See `mu4e-filter'."
 ;;; Customizable  variables
 
 (defcustom mu4e-filters-enabled
-  '(("aAttachment"  . mu4e-filter-by-attachment)
-    ("dDate"        . mu4e-filter-by-date)
-    ("gFlagged"     . mu4e-filter-by-flagged-status)
-    ("hForwarded"   . mu4e-filter-by-forwarded)
-    ("iSize"        . mu4e-filter-by-size)
-    ("lList"        . mu4e-filter-by-mailing-list)
-    ("pPriority"    . mu4e-filter-by-priority)
-    ("tRecipient"   . mu4e-filter-by-recipient)
-    ("wReplied"     . mu4e-filter-by-replied-status)
-    ("rRead"        . mu4e-filter-by-read-status)
-    ("sSender"      . mu4e-filter-by-sender)
+  '(("attachment"   . mu4e-filter-by-attachment)
+    ("date"         . mu4e-filter-by-date)
+    ("gflagged"     . mu4e-filter-by-flag-status)
+    ("hforwarded"   . mu4e-filter-by-forwarded)
+    ("isize"        . mu4e-filter-by-size)
+    ("llist"        . mu4e-filter-by-mailing-list)
+    ("priority"     . mu4e-filter-by-priority)
+    ("trecipient"   . mu4e-filter-by-recipient)
+    ("wreplied"     . mu4e-filter-by-replied-status)
+    ("read"         . mu4e-filter-by-read-status)
+    ("sender"       . mu4e-filter-by-sender)
     ("xGPG"         . mu4e-filter-by-gpg))
   "List of enabled filters.
 
