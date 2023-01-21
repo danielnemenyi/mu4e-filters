@@ -98,14 +98,14 @@ alist one-by-one. For example, to remove specific filters:
   :group 'mu4e-filters)
 
 (defcustom mu4e-filter-attachment-types
-  '(("aAll files" . "flag:attach")
-    ("AAudio" . "mime:audio/*")
-    ("iImages" . "mime:image/*")
-    ("pPDFs & Presentations" . "mime:application/pdf or mime:application/vnd.oasis.opendocument.presentation or mime:application/vnd.ms-powerpoint or mime:application/vnd.openxmlformats-officedocument.presentationml.presentation or mime:application/vnd.apple.keynote or mime:application/vnd.kde.kpresenter")
-    ("sSpreadsheets" . "mime:application/vnd.ms-excel or mime:application/vnd.oasis.opendocument.spreadsheet or mime:application/vnd.apple.numbers or mime:application/vnd.kde.kspread")
-    ("vVideos" . "mime:video/*")
-    ("wWriting" . "mime:application/vnd.openxmlformats-officedocument.wordprocessingml.document or mime:application/rtf or mime:application/vnd.oasis.opendocument.text or mime:application/vnd-wordperfect or mime:application/vnd.ms-word or mime:application/vnd.apple.pages or mime:application/vnd.kde.kword")
-    ("zArchives" . "mime:application/x-bzip or mime:application/x-bzip2 or mime:application/gzip or mime:application/vnd.rar or mime:application/x-tar or mime:application/x-7z-compressed or mime:application/zip"))
+  '(("all files" . "flag:attach")
+    ("music/audio" . "mime:audio/*")
+    ("images" . "mime:image/*")
+    ("pdf/presentations" . "mime:application/pdf or mime:application/vnd.oasis.opendocument.presentation or mime:application/vnd.ms-powerpoint or mime:application/vnd.openxmlformats-officedocument.presentationml.presentation or mime:application/vnd.apple.keynote or mime:application/vnd.kde.kpresenter")
+    ("spreadsheets" . "mime:application/vnd.ms-excel or mime:application/vnd.oasis.opendocument.spreadsheet or mime:application/vnd.apple.numbers or mime:application/vnd.kde.kspread")
+    ("videos" . "mime:video/*")
+    ("writing" . "mime:application/vnd.openxmlformats-officedocument.wordprocessingml.document or mime:application/rtf or mime:application/vnd.oasis.opendocument.text or mime:application/vnd-wordperfect or mime:application/vnd.ms-word or mime:application/vnd.apple.pages or mime:application/vnd.kde.kword")
+    ("zarchives" . "mime:application/x-bzip or mime:application/x-bzip2 or mime:application/gzip or mime:application/vnd.rar or mime:application/x-tar or mime:application/x-7z-compressed or mime:application/zip"))
    "Choice of attachment type filters.
 
 An alist which populates the function
@@ -121,13 +121,13 @@ For example:
   :group 'mu4e-filters)
 
 (defcustom mu4e-filter-list-of-dates
-  '(("dDates" .
+  '(("dates range" .
      (let* ((from-time (org-read-date nil t nil "From..."))
 	    (from-date (format-time-string "%Y-%m-%d" from-time))
 	    (to-date (org-read-date nil nil nil "To..." from-time)))
 		  (concat from-date ".." to-date)))
-    ("tToday" . "today..")
-    ("wThis week" .
+    ("today" . "today..")
+    ("wthis week" .
      (let* ((date-today (calendar-current-date))
 	      (day-of-week (calendar-day-of-week date-today))
 	      ;; How will this work on Sun when calendar-week-start-day is set to Monday
@@ -136,18 +136,18 @@ For example:
 	      (abs-date-start-of-week (- abs-date-today days-into-week))
 	      (start-of-week (calendar-gregorian-from-absolute abs-date-start-of-week)))
 	 (format "%d-%02d-%02d.." (nth 2 start-of-week) (nth 0 start-of-week) (nth 1 start-of-week))))
-    ("WPast week" . "7d..")
-    ("fPast fortnight" . "2w..")
-    ("mThis month" . (let* ((today (calendar-current-date))
+    ("Wpast week" . "7d..")
+    ("fpast fortnight" . "2w..")
+    ("mthis month" . (let* ((today (calendar-current-date))
 			    (year (caddr today))
 			    (month (car today)))
 		       (format "%s-%s-01.." year month)))
-    ("MPast month" . "1m..")
-    ("yThis year" . (let* ((today (calendar-current-date))
+    ("Mpast month" . "1m..")
+    ("ythis year" . (let* ((today (calendar-current-date))
 			   (year (caddr today)))
 		      (format "%s-01-01.." year)))
-    ("YPast year" . "1y..")
-    ("YSince start of the year" . (format-time-string "%Y")))
+    ("Ypast year" . "1y..")
+    ("Ysince start of the year" . (format-time-string "%Y")))
    "Choice of date filters.
 
 An alist which populates the function `mu4e-filter-by-date''s of
@@ -223,8 +223,8 @@ The choice of dates is determined by the variable
 (defun mu4e-filter-by-flag-status (prefix)
   "Filter flagged or unflagged messages"
   (interactive)
-  (let ((choice (mu4e-read-option "Filter by: " '(("gFlagged"   . mu4e-filter-by-flagged)
-						  ("GUnflagged" . mu4e-filter-by-unflagged)))))
+  (let ((choice (mu4e-read-option "Filter by: " '(("gflagged"   . mu4e-filter-by-flagged)
+						  ("Gunflagged" . mu4e-filter-by-unflagged)))))
     (funcall choice prefix)))
 
 (defun mu4e-filter-by-flagged (prefix)
@@ -270,8 +270,8 @@ address to the `mu4e-filter-implicit-email-lists' variable."
   (interactive)
   (let ((recipient (mu4e-message-field-at-point :to))
 	(choice (mu4e-read-option "Filter by recipient's: "
-				  '(("tAddress"             . mu4e-filter-by-recipient-address)
-				    ("fAddress (from only)" . mu4e-filter-from-recipient-address)))))
+				  '(("taddress"             . mu4e-filter-by-recipient-address)
+				    ("faddress (from only)" . mu4e-filter-from-recipient-address)))))
     (funcall choice prefix recipient)))
 
 (defun mu4e-filter-by-recipient-address (prefix recipient)
@@ -289,8 +289,8 @@ address to the `mu4e-filter-implicit-email-lists' variable."
 (defun mu4e-filter-by-replied-status (prefix)
   "Filter replied or unreplied messages"
   (interactive)
-  (let ((choice (mu4e-read-option "Filter by: " '(("wRplied"   . mu4e-filter-by-replied)
-						  ("WUnreplied" . mu4e-filter-by-unreplied)))))
+  (let ((choice (mu4e-read-option "Filter by: " '(("wreplied"   . mu4e-filter-by-replied)
+						  ("Wunreplied" . mu4e-filter-by-unreplied)))))
     (funcall choice prefix)))
 
 (defun mu4e-filter-by-replied (prefix)
@@ -306,8 +306,8 @@ address to the `mu4e-filter-implicit-email-lists' variable."
 (defun mu4e-filter-by-read-status (prefix)
   "Filter read or unread messages"
   (interactive)
-  (let ((choice (mu4e-read-option "Filter by: " '(("rRead"   . mu4e-filter-by-read)
-						  ("RUnread" . mu4e-filter-by-unread)))))
+  (let ((choice (mu4e-read-option "Filter by: " '(("read"   . mu4e-filter-by-read)
+						  ("Runread" . mu4e-filter-by-unread)))))
     (funcall choice prefix)))
 
 (defun mu4e-filter-by-read (prefix)
@@ -325,8 +325,8 @@ address to the `mu4e-filter-implicit-email-lists' variable."
   (interactive)
   (let ((sender (mu4e-message-field-at-point :from))
 	(choice (mu4e-read-option "Filter by sender's: "
-				  '(("sAddress"             . mu4e-filter-by-sender-address)
-				    ("fAddress (from only)" . mu4e-filter-from-sender-address)))))
+				  '(("saddress"             . mu4e-filter-by-sender-address)
+				    ("faddress (from only)" . mu4e-filter-from-sender-address)))))
     (funcall choice prefix sender)))
 
 (defun mu4e-filter-by-sender-address (prefix sender)
@@ -341,6 +341,11 @@ address to the `mu4e-filter-implicit-email-lists' variable."
   (let  ((sender-email (cdr (car sender))))
     (mu4e-filter-narrow-or-search prefix (concat "from:" sender-email))))
 
+(defun mu4e-filter-by-sender-name (prefix sender)
+  "Filter by messages which include sender name at point in the To, From, CC and BCC."
+  (interactive)
+  (let ((sender-name (caar sender)))
+    (mu4e-filter-narrow-or-search prefix sender-name)))
 
 ;; Unfinished
 ;; (defun mu4e-filter-by-sender-tld (prefix)
@@ -376,11 +381,11 @@ address to the `mu4e-filter-implicit-email-lists' variable."
 (defun mu4e-filter-by-gpg (prefix)
   "Filter by GPG related attributes, signed or encrypted"
   (interactive)
-  (let ((choice (mu4e-read-option "Filter by sender's: "
-				  '(("xEncrypted"   . mu4e-filter-by-encrypted)
-				    ("XUnencrypted" . mu4e-filter-by-unencrypted)
-				    ("sSigned"      . mu4e-filter-by-signed)
-				    ("SUnsigned"    . mu4e-filter-by-unsigned)))))
+  (let ((choice (mu4e-read-option "Filter by: "
+				  '(("xencrypted"   . mu4e-filter-by-encrypted)
+				    ("Xunencrypted" . mu4e-filter-by-unencrypted)
+				    ("signed"      . mu4e-filter-by-signed)
+				    ("Sunsigned"    . mu4e-filter-by-unsigned)))))
     (funcall choice prefix)))
 
 (defun mu4e-filter-by-encrypted (prefix)
