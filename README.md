@@ -2,7 +2,7 @@
 # Mu4e Filters
 
 **This is still in an experimental state. Functions and bindings may
-change in a future update.**
+change in a future update. Feedback is very much appreciated.**
 
 Mu4e Filters provides an easy and customizable search filter interface
 for the Emacs email client [Mu4e](https://github.com/djcb/mu).
@@ -69,6 +69,7 @@ Otherwise see the documentation for the variables `mu4e-filters-enabled`,
 `mu4e-filter-attachment-types`, `mu4e-filter-list-of-dates`,
 `mu4e-filter-implicit-email-lists`, `mu4e-filter-sizes`.
 
-## Support
+## Support, suggestions and other feedback
 
-Please get in touch via Github issues.
+All very welcomed. This is my first attempt to give back to the Emacs
+community. Please get in touch via Github issues.
