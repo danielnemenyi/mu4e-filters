@@ -64,7 +64,7 @@ messages, else narrow current message list. See `mu4e-filter'."
     ("gflagged"     . mu4e-filter-by-flag-status)
     ("hforwarded"   . mu4e-filter-by-forwarded)
     ("isize"        . mu4e-filter-by-size)
-    ("llist"        . mu4e-filter-by-mailing-list)
+    ("list"         . mu4e-filter-by-mailing-list)
     ("priority"     . mu4e-filter-by-priority)
     ("trecipient"   . mu4e-filter-by-recipient)
     ("wreplied"     . mu4e-filter-by-replied-status)
