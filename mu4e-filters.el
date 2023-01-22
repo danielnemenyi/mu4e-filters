@@ -24,7 +24,7 @@
 
 (require 'cal-iso) ; Needed for mu4e-filter-by-date
 
-(defconst mu4e-filter-version "0.9")
+(defconst mu4e-filter-version "0.1")
 
 (defgroup mu4e-filters nil
   "Settings for message view filters."
