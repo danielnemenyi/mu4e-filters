@@ -66,10 +66,10 @@ messages, else narrow current message list. See `mu4e-filter'."
     ("isize"        . mu4e-filter-by-size)
     ("list"         . mu4e-filter-by-mailing-list)
     ("priority"     . mu4e-filter-by-priority)
-    ("trecipient"   . mu4e-filter-by-recipient)
-    ("wreplied"     . mu4e-filter-by-replied-status)
     ("read"         . mu4e-filter-by-read-status)
     ("sender"       . mu4e-filter-by-sender)
+    ("trecipient"   . mu4e-filter-by-recipient)
+    ("wreplied"     . mu4e-filter-by-replied-status)
     ("xGPG"         . mu4e-filter-by-gpg))
   "List of enabled filters.
 
