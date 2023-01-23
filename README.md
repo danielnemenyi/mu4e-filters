@@ -9,7 +9,7 @@ change in a future update. Feedback is very much appreciated.**
 Mu4e Filters provides an easy and customizable search filter interface
 for the Emacs email client [Mu4e](https://github.com/djcb/mu).
 Install, press `,` (`M-x mu4e-filters`) on your message view and
-consider that hosepipe filtered.
+narrow or search your messages by various handy filters.
 
 Mu4e Filters hopes to reduce the overhead of context switching that
 the many kinds of messages is a typical inbox impose on a user. A
