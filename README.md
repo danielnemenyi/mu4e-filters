@@ -4,6 +4,8 @@
 **This is still in an experimental state. Functions and bindings may
 change in a future update. Feedback is very much appreciated.**
 
+![Menu provided by Mu4e Filters](mu4e-filters.png)
+
 Mu4e Filters provides an easy and customizable search filter interface
 for the Emacs email client [Mu4e](https://github.com/djcb/mu).
 Install, press `,` (`M-x mu4e-filters`) on your message view and
